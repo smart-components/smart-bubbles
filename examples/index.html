@@ -5,7 +5,7 @@
   <title>Smart Bubbles Demo</title>
   <meta name="description" content="Demo app for smart-bubbles" />
   <link rel="stylesheet" type="text/css" href="bower_components/smart-button/style.css">
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <style type="text/css">
     html,
     body {
@@ -38,6 +38,19 @@
       document.getElementById('test-target').stopImmediately();
     }
 
+    function changeDirection() {
+      var container = document.getElementById('main-container');
+      var directionButton = document.getElementById('direction');
+      var direction = container.getAttribute('smart-bubbles-direction');
+      if (direction === 'up') {
+        directionButton.textContent = 'Down';
+        container.setAttribute('smart-bubbles-direction', 'down');
+      } else {
+        directionButton.textContent = 'Up';
+        container.setAttribute('smart-bubbles-direction', 'up');
+      }
+    }
+
     window.onload = function() {
       ['item-bubbled', 'all-items-bubbled', 'all-items-stopped'].forEach(
         function(evt) {
@@ -50,14 +63,15 @@
   </script>
   <script></script>
   <script src="bower_components/smart-button/script.js" type="text/javascript"></script>
-  <script src="../script.js" type="text/javascript"></script>
+  <script src="script.js" type="text/javascript"></script>
 </head>
 <body role="application">
   <button type="button" onclick="play();">Play</button>
   <button type="button" onclick="stop();">Stop</button>
+  <button id="direction" type="button" onclick="changeDirection();">Up</button>
   <smart-bubbles id="test-target" interval="50">
   </smart-bubbles>
-  <div id="main-container" smart-bubbles="true">
+  <div id="main-container" smart-bubbles="true" smart-bubbles-direction="up">
     <smart-button type="circle-text">Item 1</smart-button>
     <smart-button type="circle-text">Item 2</smart-button>
     <smart-button type="circle-text">Item 3</smart-button>
