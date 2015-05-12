@@ -42,12 +42,12 @@
       var container = document.getElementById('main-container');
       var directionButton = document.getElementById('direction');
       var direction = container.getAttribute('smart-bubbles-direction');
-      if (direction === 'up') {
+      if (!direction || direction === 'up') {
         directionButton.textContent = 'Down';
         container.setAttribute('smart-bubbles-direction', 'down');
       } else {
         directionButton.textContent = 'Up';
-        container.setAttribute('smart-bubbles-direction', 'up');
+        container.removeAttribute('smart-bubbles-direction');
       }
     }
 

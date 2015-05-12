@@ -1,9 +1,6 @@
 *[smart-bubbles="true"] .smart-bubble-playing {
   transition-property: none;
   transform: none;
-}
-
-*[smart-bubbles="true"][smart-bubbles-direction="up"] .smart-bubble-playing {
   animation: bubble-animation 0.5s cubic-bezier(0.25, 0, 0, 1) both;
 }
 
