@@ -1,4 +1,7 @@
-# smart-bubbles
+# smart-bubbles (Deprecated)
+
+Note: The development of this component has been moved to https://github.com/fxos-components as ```fxos-tv-modal-dialog```.
+
 A web component of displaying bubbling up or down animation
 
 
